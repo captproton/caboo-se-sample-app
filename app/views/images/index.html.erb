@@ -1,0 +1,26 @@
+<%= will_paginate @images %>
+
+<table>
+  <thead>
+    <tr>
+      <th>Thumbnail</th>
+      <th>Filename</th>
+      <th>Size</th>
+    </tr>
+  </thead>
+<% @images.each do |image| %>
+  <tbody id="<%= dom_id(image) %>" class="linkable">
+    <tr>
+      <td><%= image_tag image.public_filename(:thumb) %></td>
+      <td><%= link_to h(image.filename), "image" %></td>
+      <td><%=h image.size %></td>
+    </tr>
+  </tbody>
+<% end %>
+</table>
+
+<%= will_paginate @images %>
+
+<div class="actions">
+  <%= link_to "Upload new", new_user_image_path(user) %>
+</div>

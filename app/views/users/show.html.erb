@@ -1,0 +1,16 @@
+<h1><%=h @user.login %></h1>
+
+<p>Email: <%=h @user.email %></p>
+<p>Timezone: <%=h @user.time_zone %></p>
+
+<ul>
+<% @user.images.each do |image| %>
+  <li><%=h image.inspect %><%#= link_to image_tag(image.public_filename(:tiny)), [image.attachable, image] %></li>
+<% end %>
+</ul>
+
+<div class="actions">
+  <%= link_to 'Image', user_images_path(user) %> |
+  <%= link_to 'Edit', edit_user_path(@user) %> |
+  <%= link_to 'Back', users_path %>
+</div>

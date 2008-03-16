@@ -1,0 +1,51 @@
+Image: <img src="<%=h image.public_filename(:fullscreen) %>" width="<%=h image.width %>" height="<%=h image.height %>" />
+
+<p>
+  <b>Filename:</b>
+  <%=h image.filename %>
+</p>
+
+<p>
+  <b>Width:</b>
+  <%=h image.width %>
+</p>
+
+<p>
+  <b>Height:</b>
+  <%=h image.height %>
+</p>
+
+<p>
+  <b>Content type:</b>
+  <%=h image.content_type %>
+</p>
+
+<p>
+  <b>Size:</b>
+  <%=h image.size %>
+</p>
+
+<p>
+  <b>Attachable type:</b>
+  <%=h image.attachable_type %>
+</p>
+
+<p>
+  <b>Attachable:</b>
+  <%=h image.attachable_id %>
+</p>
+
+<p>
+  <b>Updated at:</b>
+  <%=h image.updated_at %>
+</p>
+
+<p>
+  <b>Created at:</b>
+  <%=h image.created_at %>
+</p>
+
+<div class="actions">
+  <%= link_to 'Edit', edit_user_image_path(image) %> |
+  <%= link_to 'All Images', user_images_path() %>
+</div>
